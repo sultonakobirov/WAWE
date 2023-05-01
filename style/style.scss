@@ -51,7 +51,7 @@ body{
     max-width: 2000px;
     width: 100%;
     height: fit-content;
-
+    overflow-x: hidden;
 }
 // ============ Header ============ //
 .header{
@@ -65,7 +65,8 @@ body{
     position: absolute;
     transform: translateX(-50%);
     left: 50%;
-    z-index: 1;
+    z-index: 4;
+    background: linear-gradient(180deg, #00000095, 40%, #ffffff00);
     a{
         left: 0.5%;
         z-index: 1;
@@ -120,6 +121,9 @@ body{
     }
     .hamburger-menu{
         display: none;
+    }
+    .menu-box{
+        transition: 0.2s;
     }
 
 }
@@ -268,7 +272,7 @@ section{
     padding-bottom: 0;
     padding-top: 0;
     img{
-        width: 60%;
+        width: 100%;
         
     }
     .section-four-text{
@@ -449,7 +453,6 @@ section{
     margin: 0 auto 10%;
     flex-direction: column;
     padding: 0;
-
     video{
         width: 75%;
         max-height: 630px;
@@ -467,7 +470,6 @@ section{
             font-size: 64px;
             line-height: 75px;
             color: #01353E;
-
         }
         @include text-configs()
         
@@ -563,9 +565,7 @@ section{
 
         .team-member{
             display: flex;
-            gap: 20px;
             flex-direction: column;
-            gap: px;
             justify-content: center;
             text-align: center;
         }
@@ -579,7 +579,6 @@ section{
             line-height: 18px;
         }
     }
-
 }
 // ============ Section Sevrice-packages ============ //
 .service-packages{
@@ -869,13 +868,16 @@ footer{
 }
 .modal-cont{
     background-color: #0000007d;
-    height: 100vh;
-    width: 100%;
-    z-index: 9999999;
-    display: none;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    z-index: 9;
+    display: flex;
     align-items: center;
     justify-content: center;
     position: sticky;
     top: 0;
+    left: 50%;
+    transition: 0.2s;
 }
 
