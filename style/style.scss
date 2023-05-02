@@ -77,7 +77,7 @@ body{
     position: fixed;
     transform: translateX(-50%);
     left: 50%;
-    z-index: 4;
+    z-index: 99;
     background: linear-gradient(180deg, #00000095, 40%, #ffffff00);
     a{
         left: 0.5%;

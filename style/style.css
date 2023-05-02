@@ -39,7 +39,7 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   transform: translateX(-50%);
   left: 50%;
-  z-index: 4;
+  z-index: 99;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5843137255), 40%, rgba(255, 255, 255, 0));
 }
 .header a {
