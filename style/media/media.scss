@@ -165,6 +165,7 @@
         }
         .hamburger-menu{
             display: block;
+            
             input{
                 display: none;
             }
@@ -188,7 +189,10 @@
             ul{
                 background-color: #7ec2bb68;
                 backdrop-filter: blur(8px);
-                border-radius: 30px;
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 30px;
                 overflow: hidden;
                 width: 0;
                 li{

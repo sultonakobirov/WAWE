@@ -36,7 +36,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: space-evenly;
   align-items: center;
   padding-right: 18%;
-  position: absolute;
+  position: fixed;
   transform: translateX(-50%);
   left: 50%;
   z-index: 4;
