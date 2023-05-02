@@ -94,4 +94,7 @@ let swiper = new Swiper(".mySwiper", {
         return '<span class="' + className + '">' + ("") + "</span>";
         },
     },
+    autoplay: {
+        delay: 5000,
+    },
 });
