@@ -1,5 +1,6 @@
-let hamburgerMenu = document.getElementById('menu-toggle')
-let menuCont = document.querySelector('.menu-box')
+let hamburgerMenu = document.getElementById('checkbox-menu')
+let menuBg = document.getElementById('nav-bg')
+let menuCont = document.querySelector('.header-links-media')
 let spanOne = document.getElementById('one')
 let spanTwo = document.getElementById('two')
 let spanThree = document.getElementById('three')
@@ -14,45 +15,6 @@ let body = document.querySelector('body')
 
 let daysNum = 365
 const applicantForm = document.getElementById('submit-btn')
-hamburgerMenu.onclick = () =>{
-    if (hamburgerMenu.checked === true) {
-        menuCont.style.overflow = 'visible'
-        menuCont.style.width = 'fit-content'
-        menuCont.style.height = 'fit-content'
-        menuCont.style.position = 'absolute'
-        menuCont.style.top = '0px'
-        menuCont.style.right = '0px'
-        menuCont.style.padding = '50px 100px'
-        spanOne.style.rotate = '45deg'
-        spanTwo.style.rotate = '-45deg'
-        spanOne.style.transition = '0.2s'
-        spanTwo.style.transition = '0.2s'
-        spanThree.style.transition = '0.2s'
-        spanOne.style.position = 'absolute'
-        spanTwo.style.position = 'absolute'
-        spanOne.style.zIndex = '9'
-        spanTwo.style.zIndex = '9'
-        spanThree.style.display = 'none'
-        spanOne.style.right = '5px'
-        spanTwo.style.right = '5px'
-        spanOne.style.top = '10px'
-        spanTwo.style.top = '10px'
-        
-    }else{
-        menuCont.style.overflow = 'hidden'
-        menuCont.style.position = 'unset'
-        menuCont.style.width = '0'
-        menuCont.style.position = 'absolute'
-        menuCont.style.padding = '0'
-        menuCont.style.top = '0px'
-        menuCont.style.right = '0px'
-        spanOne.style.rotate = '0deg'
-        spanTwo.style.rotate = '0deg'
-        spanThree.style.display = 'block'
-        spanOne.style.position = 'unset'
-        spanTwo.style.position = 'unset'
-    }
-}
 
 function cycle(content, object, num) {
     object.addEventListener("click", ()=>{
@@ -84,6 +46,7 @@ closeModal.onclick = () =>{
 }
 
 
+
 function handleFormSubmit(event) {
     event.preventDefault()
 }
@@ -97,7 +60,26 @@ let swiper = new Swiper(".mySwiper", {
         return '<span class="' + className + '">' + ("") + "</span>";
         },
     },
+    speed: 500,
+    spaceBetween: 10,
     autoplay: {
-        delay: 5000,
+        delay: 4000,
+        disableOnInteraction: false,
     },
 });
+
+hamburgerMenu.onclick = () =>{
+  if(hamburgerMenu.checked == true){
+    menuCont.style.transition = '0.8s'
+    menuCont.style.scale = '1'
+    menuBg.style.scale = '490'
+    menuBg.style.transition = '0.7s'
+    body.style.overflow = 'hidden'
+    
+  }else{
+    menuCont.style.scale = '0'
+    menuBg.style.scale = '0'
+    body.style.overflow = 'auto'
+    menuCont.style.transition = '0.4s'
+  }
+}

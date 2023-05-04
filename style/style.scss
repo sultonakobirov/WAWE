@@ -45,7 +45,16 @@
     display: flex;
     justify-content: center;
 }
+li{
+    list-style: none;
+    a{
+        color: white;
+    }
+}
 // ============ Container ============ //
+html {
+    scroll-behavior: smooth;
+}
 body{
     margin: 0 auto;
     max-width: 2000px;
@@ -56,7 +65,7 @@ body{
     width: 7px;
     }
     &::-webkit-scrollbar-track {
-    background-color: #ffffff;
+    background-color: #ffffff00;
     }
     &::-webkit-scrollbar-thumb {
     background-color: #00b2a086;
@@ -134,10 +143,6 @@ body{
     .hamburger-menu{
         display: none;
     }
-    .menu-box{
-        transition: 0.2s;
-    }
-
 }
 
 section{
@@ -156,6 +161,7 @@ section{
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-top: 16%;
     h1{
         font-family: 'Raleway';
         font-style: normal;
@@ -513,8 +519,8 @@ section{
         object-fit: cover;
     }
     .swiper-pagination-bullet {
-        width: 15px;
-        height: 15px;
+        width: 12px;
+        height: 12px;
         text-align: center;
         line-height: 20px;
         font-size: 12px;

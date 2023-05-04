@@ -18,32 +18,38 @@
             <img src="./img/wawe-logo.svg" alt="logo">
         </a>
         <ul class="header-links">
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Стоимость</a></li>
-            <li><a href="#">Блог</a></li>
-            <li><a href="#">Команда</a></li>                   
-            <li><a href="#">Контакты</a></li>
+            <li><a href="#about-us">О нас</a></li>
+            <li><a href="#services-sect">Услуги</a></li>
+            <li><a href="#tarrif-sect">Стоимость</a></li>
+            <li><a href="#blog">Блог</a></li>
+            <li><a href="#team-sect">Команда</a></li>                   
+            <li><a href="#contact-sect">Контакты</a></li>
         </ul><!-- /links -->
-            <div class="hamburger-menu">
-                <input id="menu-toggle" type="checkbox">
-                <label class="menu-btn" for="menu-toggle">
-                    <div class="span-cont">
-                        <span id="one"></span>
-                        <span id="two"></span>
-                        <span id="three"></span>
-                    </div>
-                </label>
-                <ul class="menu-box">
-                    <li><a class="menu-item" href="#">О нас</a></li>
-                    <li><a class="menu-item" href="#">Услуги</a></li>
-                    <li><a class="menu-item" href="#">Стоимость</a></li>   
-                    <li><a class="menu-item" href="#">Блог</a></li>
-                    <li><a class="menu-item" href="#">Команда</a></     li>                   
-                    <li><a class="menu-item" href="#">Контакты</a></li>
-                </ul>
-            </div><!-- /hamburger-menu -->
-    </header> 
+        
+        <div class="hamburger-menu">
+            <div id="nav-bg" class="btn"></div>
+        <div id="toggle-btn" class="btn">
+            <input type="checkbox" name="toggle-btn-dec" id="checkbox-menu">
+            <label for="checkbox-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="wrapper">
+            <nav>
+                <ul class="header-links-media">
+                    <li><a href="#about-us">О нас</a></li>
+                    <li><a href="#services-sect">Услуги</a></li>
+                    <li><a href="#">Стоимость</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Команда</a></li>                   
+                    <li><a href="#">Контакты</a></li>
+                </ul><!-- /links -->
+            </nav>
+        </div>
+        </div>
+        </header> 
     <div class="modal-cont">
         <div class="modal-window">
             <button class="exit"><span class="x"></span></button>
@@ -64,7 +70,7 @@
         </section>
         <!-- /section-one -->
         <section class="section-two">
-                <h2>
+                <h2 id="about-us">
                     О  ШКОЛЕ, О СЕРФИНГЕ, О КАНАРАХ <sub>/</sub>
                 </h2>
             <div class="section-two-paragraph-container">
@@ -101,7 +107,7 @@
             </h2>
         <div class="section-three-container">
             <div class="section-three-info">
-                <div class="information">
+                <div id="services-sect" class="information">
                     <div class="living-expenses-heading">
                         <img src="img/sun-sea.svg" alt="sun-sea">
                         <h3>ПРОЖИВАНИЕ</h3>
@@ -246,7 +252,7 @@
                 <p class="days-cont"><span class="days">365</span> <br> дней в году</p>
             </div>
         </section>
-        <section class="blog">
+        <section id="blog" class="blog">
             <h2> БЛОГ <sub>/</sub></h2>
             <div class="swiper mySwiper" data-swiper-autoplay="2000" >
                 <div class="swiper-wrapper">
@@ -300,7 +306,7 @@
               </div>
         </section>
         <section class="team">
-            <h2>НАША КОМАНДА <sub>/</sub></h2>
+            <h2 id="team-sect">НАША КОМАНДА <sub>/</sub></h2>
             <div class="team-members-container">
                 <div class="team-member">
                     <img src="img/mike-photo.jpg" alt="">
@@ -328,10 +334,10 @@
                 </div><!-- /team-member -->
             </div><!-- /team-members-container -->
         </section>
-        <section class="service-packages">
+        <section  class="service-packages">
             <h2>ПАКЕТЫ УСЛУГ <sub>/</sub></h2>
             <div class="tariff-container">
-                <div class="tariff-item">
+                <div id="tarrif-sect" class="tariff-item">
                     <h3>Стандарт</h3>
                     <span>Проживание на вилле 6 ночей </span>
                     <span>Номер категории стандарт</span>
@@ -386,7 +392,7 @@
                     <textarea class="fill-message" type="text" placeholder="Оставьте сообщение, и мы свяжемся с Вами в ближайшее время"></textarea>
                     <button type="submit" id="submit-btn">ОТПРАВИТЬ</button>
                 </form>
-                <div class="contacts">
+                <div id="contact-sect" class="contacts">
                     <div class="question-contacts">
                         <span>Есть вопрос?</span>
                         <span>Вы можете связаться с нами:</span>

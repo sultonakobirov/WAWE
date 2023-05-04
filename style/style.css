@@ -8,6 +8,17 @@
   letter-spacing: 0.6px;
 }
 
+li {
+  list-style: none;
+}
+li a {
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0 auto;
   max-width: 2000px;
@@ -20,7 +31,7 @@ body::-webkit-scrollbar {
   width: 7px;
 }
 body::-webkit-scrollbar-track {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0);
 }
 body::-webkit-scrollbar-thumb {
   background-color: rgba(0, 178, 160, 0.5254901961);
@@ -98,9 +109,6 @@ body::-webkit-scrollbar-thumb {
 .header .hamburger-menu {
   display: none;
 }
-.header .menu-box {
-  transition: 0.2s;
-}
 
 section {
   padding: 10% 0;
@@ -118,6 +126,7 @@ section {
   justify-content: center;
   align-items: center;
   position: relative;
+  padding-top: 16%;
 }
 .section-one h1 {
   font-family: "Raleway";
@@ -546,8 +555,8 @@ section {
      object-fit: cover;
 }
 .blog .swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   text-align: center;
   line-height: 20px;
   font-size: 12px;
