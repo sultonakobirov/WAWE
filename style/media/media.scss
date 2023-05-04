@@ -104,7 +104,9 @@
     .header{
         display: flex;
         justify-content: space-between;
-
+        .header-links{
+            display: none;
+        }
         .hamburger-menu{
             display: block;
             position: absolute;

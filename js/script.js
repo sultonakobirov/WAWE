@@ -62,6 +62,7 @@ let swiper = new Swiper(".mySwiper", {
     },
     speed: 500,
     spaceBetween: 10,
+    loop: true,
     autoplay: {
         delay: 4000,
         disableOnInteraction: false,
@@ -70,10 +71,10 @@ let swiper = new Swiper(".mySwiper", {
 
 hamburgerMenu.onclick = () =>{
   if(hamburgerMenu.checked == true){
-    menuCont.style.transition = '0.8s'
     menuCont.style.scale = '1'
-    menuBg.style.scale = '490'
-    menuBg.style.transition = '0.7s'
+    menuBg.style.scale = '570'
+    menuCont.style.transition = '0.2s'
+    menuBg.style.transition = '0.3s'
     body.style.overflow = 'hidden'
     
   }else{
