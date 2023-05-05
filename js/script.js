@@ -1,9 +1,9 @@
 let hamburgerMenu = document.getElementById('checkbox-menu')
 let menuBg = document.getElementById('nav-bg')
 let menuCont = document.querySelector('.header-links-media')
-let spanOne = document.getElementById('one')
-let spanTwo = document.getElementById('two')
-let spanThree = document.getElementById('three')
+let spanOne = document.querySelector('.one')
+let spanTwo = document.querySelector('.two')
+let spanThree = document.querySelector('.three')
 let threeSpan = document.getElementsByClassName('span-cont')
 let days = document.querySelector('.days')
 let daysCont = document.querySelector('.days-cont')
@@ -12,9 +12,8 @@ let modalWindowCont = document.querySelector('.modal-cont')
 let modalWindow = document.querySelector('.modal-window')
 let closeModal = document.querySelector('.exit')
 let body = document.querySelector('body')
-
+let applicantForm = document.getElementById('submit-btn')
 let daysNum = 365
-const applicantForm = document.getElementById('submit-btn')
 
 function cycle(content, object, num) {
     object.addEventListener("click", ()=>{
@@ -27,7 +26,6 @@ function cycle(content, object, num) {
     })
 }
 cycle(days, daysCont, daysNum)
-
 
 showMoreModal.onclick = () =>{
     modalWindowCont.style.display = 'flex'
@@ -69,18 +67,36 @@ let swiper = new Swiper(".mySwiper", {
     },
 });
 
-hamburgerMenu.onclick = () =>{
-  if(hamburgerMenu.checked == true){
-    menuCont.style.scale = '1'
-    menuBg.style.scale = '570'
-    menuCont.style.transition = '0.2s'
-    menuBg.style.transition = '0.3s'
-    body.style.overflow = 'hidden'
-    
-  }else{
-    menuCont.style.scale = '0'
-    menuBg.style.scale = '0'
-    body.style.overflow = 'auto'
-    menuCont.style.transition = '0.4s'
-  }
-}
+// hamburgerMenu.onclick = () =>{
+//     if(hamburgerMenu.checked == true){
+//     menuCont.style.scale = '1'
+//     menuBg.style.scale = '2080'
+//     menuCont.style.transition = '100ms'
+//     menuBg.style.transition = '800ms'
+//     body.style.overflow = 'hidden'
+//     spanOne.style.top = '20px'
+//     spanTwo.style.top = '20px'
+//     spanThree.style.top = '20px'
+//     spanOne.style.display = 'none'
+//     spanThree.style.rotate = '45deg'
+//     spanTwo.style.rotate = '-45deg'
+//     spanOne.style.transition = '1000ms'
+//     spanTwo.style.transition = '1000ms'
+//     spanThree.style.transition = '1000ms'
+//     hamburgerMenu.style.rotateX = '360deg'
+//     hamburgerMenu.style.transition= '1000ms'
+
+
+//     }else{
+//     menuCont.style.scale = '0'
+//     menuBg.style.scale = '0'
+//     body.style.overflow = 'auto'
+//     menuCont.style.transition = '400ms'
+//     spanOne.style.top = '0'
+//     spanTwo.style.top = '15px'
+//     spanThree.style.top = '30px'
+//     spanOne.style.display = 'block'
+//     spanThree.style.rotate = '0deg'
+//     spanTwo.style.rotate = '0deg'
+//     }
+// }

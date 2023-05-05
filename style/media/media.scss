@@ -115,7 +115,7 @@
             .header-links-media{
                 position: absolute;
                 top: 200px;
-                right: 550%;
+                left: -560px;
                 scale: 0;
                 a{
                     font-size: 64px;
@@ -129,10 +129,29 @@
                     gap: 10px;
                     position: relative;
                     z-index: 2;
-                    span{
+                    right: 50px;
+                    .one{
                         height: 6px;
-                        width: 50px;
+                        width: 60px;
                         background-color: white;
+                        position: absolute;
+
+                    }
+                    .two{
+                        content: '';
+                        height: 6px;
+                        width: 60px;
+                        background-color: white;
+                        position: absolute;
+                        top: 15px;
+                    }
+                    .three{
+                        content: '';
+                        height: 6px;
+                        width: 60px;
+                        background-color: white;
+                        position: absolute;
+                        top: 30px;
                     }
                 }
                 input{

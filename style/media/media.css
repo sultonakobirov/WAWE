@@ -95,7 +95,7 @@
   .header .hamburger-menu .header-links-media {
     position: absolute;
     top: 200px;
-    right: 550%;
+    left: -560px;
     scale: 0;
   }
   .header .hamburger-menu .header-links-media a {
@@ -107,11 +107,29 @@
     gap: 10px;
     position: relative;
     z-index: 2;
+    right: 50px;
   }
-  .header .hamburger-menu #toggle-btn label span {
+  .header .hamburger-menu #toggle-btn label .one {
     height: 6px;
-    width: 50px;
+    width: 60px;
     background-color: white;
+    position: absolute;
+  }
+  .header .hamburger-menu #toggle-btn label .two {
+    content: "";
+    height: 6px;
+    width: 60px;
+    background-color: white;
+    position: absolute;
+    top: 15px;
+  }
+  .header .hamburger-menu #toggle-btn label .three {
+    content: "";
+    height: 6px;
+    width: 60px;
+    background-color: white;
+    position: absolute;
+    top: 30px;
   }
   .header .hamburger-menu #toggle-btn input {
     display: none;
