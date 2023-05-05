@@ -69,7 +69,7 @@ let swiper = new Swiper(".mySwiper", {
 
 hamburgerMenu.onclick = () =>{
     if(hamburgerMenu.checked == true){
-    menuBg.style.scale = '100'
+    menuBg.style.scale = '1660'
     spanOne.style.top = '15px'
     spanTwo.style.top = '15px'
     spanThree.style.top = '15px'

@@ -100,6 +100,8 @@
   }
   .header .hamburger-menu .header-links-media a {
     font-size: 64px;
+    font-weight: 900;
+    line-height: 100px;
   }
   .header .hamburger-menu #toggle-btn label {
     display: flex;
@@ -136,12 +138,10 @@
     display: none;
   }
   .header .hamburger-menu #nav-bg {
-    height: 70px;
-    width: 70px;
+    height: 5px;
+    width: 5px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.155);
-    -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.231372549);
     position: absolute;
     top: 27px;
     right: 25px;

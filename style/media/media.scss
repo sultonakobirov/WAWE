@@ -119,6 +119,8 @@
                 scale: 0;
                 a{
                     font-size: 64px;
+                    font-weight: 900;
+                    line-height: 100px;
                 }
             }
             #toggle-btn{
@@ -160,18 +162,16 @@
                 }
             }
             #nav-bg{
-                height: 70px;
-                width: 70px;
+                height: 5px;
+                width: 5px;
                 border-radius: 50%;
-                background-color: rgba(0, 0, 0, 0.155);
-                backdrop-filter: blur(15px);
+                background-color: #0000003b;
                 position: absolute;
                 top: 27px;
                 right: 25px;
                 z-index: 0;
                 translate: 50% -50%;
             }
-
         }
     }
     .section-two{
