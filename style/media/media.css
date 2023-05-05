@@ -108,43 +108,45 @@
     position: relative;
     z-index: 2;
     right: 50px;
+    top: 10px;
   }
   .header .hamburger-menu #toggle-btn label .one {
-    height: 6px;
-    width: 60px;
+    height: 5px;
+    width: 50px;
     background-color: white;
     position: absolute;
   }
   .header .hamburger-menu #toggle-btn label .two {
     content: "";
-    height: 6px;
-    width: 60px;
-    background-color: white;
-    position: absolute;
-    top: 15px;
-  }
-  .header .hamburger-menu #toggle-btn label .three {
-    content: "";
-    height: 6px;
-    width: 60px;
+    height: 5px;
+    width: 50px;
     background-color: white;
     position: absolute;
     top: 30px;
+  }
+  .header .hamburger-menu #toggle-btn label .three {
+    content: "";
+    height: 5px;
+    width: 50px;
+    background-color: white;
+    position: absolute;
+    top: 15px;
   }
   .header .hamburger-menu #toggle-btn input {
     display: none;
   }
   .header .hamburger-menu #nav-bg {
-    height: 5px;
-    width: 5px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
-    background-color: rgba(130, 189, 196, 0.536);
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.155);
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
     position: absolute;
-    top: 16px;
-    right: 23px;
+    top: 27px;
+    right: 25px;
     z-index: 0;
+    translate: 50% -50%;
   }
   .section-two .section-two-paragraph-container {
     display: flex;

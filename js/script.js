@@ -67,36 +67,34 @@ let swiper = new Swiper(".mySwiper", {
     },
 });
 
-// hamburgerMenu.onclick = () =>{
-//     if(hamburgerMenu.checked == true){
-//     menuCont.style.scale = '1'
-//     menuBg.style.scale = '2080'
-//     menuCont.style.transition = '100ms'
-//     menuBg.style.transition = '800ms'
-//     body.style.overflow = 'hidden'
-//     spanOne.style.top = '20px'
-//     spanTwo.style.top = '20px'
-//     spanThree.style.top = '20px'
-//     spanOne.style.display = 'none'
-//     spanThree.style.rotate = '45deg'
-//     spanTwo.style.rotate = '-45deg'
-//     spanOne.style.transition = '1000ms'
-//     spanTwo.style.transition = '1000ms'
-//     spanThree.style.transition = '1000ms'
-//     hamburgerMenu.style.rotateX = '360deg'
-//     hamburgerMenu.style.transition= '1000ms'
-
-
-//     }else{
-//     menuCont.style.scale = '0'
-//     menuBg.style.scale = '0'
-//     body.style.overflow = 'auto'
-//     menuCont.style.transition = '400ms'
-//     spanOne.style.top = '0'
-//     spanTwo.style.top = '15px'
-//     spanThree.style.top = '30px'
-//     spanOne.style.display = 'block'
-//     spanThree.style.rotate = '0deg'
-//     spanTwo.style.rotate = '0deg'
-//     }
-// }
+hamburgerMenu.onclick = () =>{
+    if(hamburgerMenu.checked == true){
+    menuBg.style.scale = '100'
+    spanOne.style.top = '15px'
+    spanTwo.style.top = '15px'
+    spanThree.style.top = '15px'
+    setTimeout(() => {
+        spanOne.style.rotate = '45deg'
+        spanTwo.style.rotate = '-45deg'
+        spanThree.style.rotate = '-45deg'
+        menuCont.style.scale = '1'
+    }, 150);
+    spanOne.style.transition = '300ms'
+    spanTwo.style.transition = '300ms'
+    spanThree.style.transition = '300ms'
+    menuCont.style.transition = '200ms'
+    menuBg.style.transition = '300ms'
+    }else{
+    menuCont.style.scale = '0'
+    menuCont.style.transition = '400ms'
+    spanOne.style.rotate = '0deg'
+    spanTwo.style.rotate = '0deg'
+    spanThree.style.rotate = '0deg'
+    setTimeout(() => {
+        spanOne.style.top = '0px'
+        spanTwo.style.top = '15px'
+        spanThree.style.top = '30px'
+        menuBg.style.scale = '1'
+    }, 150);
+    }
+}
