@@ -13,19 +13,11 @@ let modalWindow = document.querySelector('.modal-window')
 let closeModal = document.querySelector('.exit')
 let body = document.querySelector('body')
 let applicantForm = document.getElementById('submit-btn')
-let daysNum = 365
-
-function cycle(content, object, num) {
-    object.addEventListener("click", ()=>{
-        for (let i = 0; i <= num; i++) {
-            setTimeout(function () {
-                content.innerHTML = i
-                console.log(i);
-            }, 10*i);
-            }
-    })
-}
-cycle(days, daysCont, daysNum)
+let modalForm = document.getElementById('form-sub')
+let couchesNum = document.querySelector('.couches')
+let hoursNum = document.querySelector('.hours')
+let touristsNum = document.querySelector('.tourists') 
+let galleryImages = document.querySelector('.grid-one')
 
 showMoreModal.onclick = () =>{
     modalWindowCont.style.display = 'flex'
@@ -33,8 +25,6 @@ showMoreModal.onclick = () =>{
     modalWindowCont.style.overflow = 'auto'
     modalWindowCont.style.height = '100vh'
     modalWindowCont.style.width = '100%'
-
-
 }
 closeModal.onclick = () =>{
     body.style.overflow = 'auto'
@@ -48,6 +38,7 @@ closeModal.onclick = () =>{
 function handleFormSubmit(event) {
     event.preventDefault()
 }
+modalForm.onclick = handleFormSubmit
 applicantForm.onclick = handleFormSubmit
 
 let swiper = new Swiper(".mySwiper", {
@@ -98,3 +89,33 @@ hamburgerMenu.onclick = () =>{
     }, 150);
     }
 }
+
+let main = document.documentElement
+let clientWidth = main.clientWidth
+let clientHeight = main.clientHeight
+
+function cycle(content, num) {
+    let a = 0
+    for (let i = 0; i <= num; i = i + 1) {
+        setTimeout(function () {
+            content.innerHTML = i
+            console.log(i);
+        }, 2*i);
+    }
+}
+
+let coordinationIndicators = document.querySelector('.indicators')
+console.log(coordinationIndicators.getBoundingClientRect());
+
+if (coordinationIndicators.top >= clientHeight) {
+    cycle(touristsNum, 450)
+    cycle(hoursNum, 2500)
+    cycle(couchesNum, 10)
+    cycle(days, 365)
+}
+
+let turisti = document.querySelector('.turisti')
+turisti.onclick = handleFormSubmit
+turisti.addEventListener('click',  () =>{
+    
+})

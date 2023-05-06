@@ -19,11 +19,11 @@
         </a>
         <ul class="header-links">
             <li><a href="#about-us">О нас</a></li>
-            <li><a href="#services-sect">Услуги</a></li>
-            <li><a href="#tarrif-sect">Стоимость</a></li>
-            <li><a href="#blog">Блог</a></li>
-            <li><a href="#team-sect">Команда</a></li>                   
-            <li><a href="#contact-sect">Контакты</a></li>
+                    <li><a class="header-jakor" href="#services-sect">Услуги</a></li>
+                    <li><a class="header-jakor" href="#tarrif-sect">Стоимость</a></li>
+                    <li><a class="header-jakor" href="#blog">Блог</a></li>
+                    <li><a class="header-jakor" href="#team-sect">Команда</a></li>                   
+                    <li><a class="header-jakor" href="#contact-sect">Контакты</a></li>
         </ul><!-- /links -->
         
         <div class="hamburger-menu">
@@ -54,10 +54,10 @@
     <div class="modal-cont">
         <div class="modal-window">
             <button class="exit"><span class="x"></span></button>
-            <form action="#">
+            <form action="">
                 <input type="email" placeholder="email">
                 <input type="password" placeholder="password">
-                <button type="submit">Sign in</button>
+                <button id="form-sub" type="submit" >Sign in</button>
             </form>
         </div>
     </div>
@@ -103,12 +103,12 @@
             </div><!-- /about-paragraph-container -->
         </section>
         <section class="section-three">
-            <h2>
+            <h2  id="services-sect">
                 В  ШКОЛЕ ВЫ ПОЛУЧИТЕ <sub>/</sub>
             </h2>
         <div class="section-three-container">
             <div class="section-three-info">
-                <div id="services-sect" class="information">
+                <div class="information">
                     <div class="living-expenses-heading">
                         <img src="img/sun-sea.svg" alt="sun-sea">
                         <h3>ПРОЖИВАНИЕ</h3>
@@ -181,7 +181,7 @@
                         Методика обучения серфингу рассчитана как на новичков, на серферов среднего уровня, так и на серферов уровня ТОП. Тренеры находят подход к каждому, несмотря на то, что обучение серфингу в нашей школе производится в группах. Однако, мы предлагаем персональные уроки серфинга - только вы и тренер!
                     </p>
             </div><!-- /surfer-text -->
-            <div data-aos="zoom-in-left">
+            <div class="img-surfer" data-aos="zoom-in-left">
                 <div class="section-four-img">
                     <img src="img/surfer.jpg" alt="surfer">
                 </div>
@@ -195,7 +195,7 @@
             <div class="flex-item-container">
                 <div class="gallery-links">
                     <a href="#">ВСЕ</a>
-                    <a href="#">ТУРИСТЫ</a>
+                    <a class="turisti" href="#">ТУРИСТЫ</a>
                     <a href="#">ПРИРОДА</a>
                     <a href="#">ПРОФИ</a>
                 </div>
@@ -205,7 +205,7 @@
                     <div class="image item-1">
                         <img src="img/image1.jpg" alt="">
                     </div><!-- /image -->
-                    <div class="image item-2">
+                    <div class="turisti-img image item-2">
                         <img src="img/image4.jpg" alt="">
                     </div><!-- /image -->
                     <div class="image item-3">
@@ -214,13 +214,13 @@
                 </div>
                 <!-- grid-one -->
                 <div class="grid-two">
-                    <div class="image item-4">
+                    <div class="profi-img image item-4">
                         <img src="img/image2.jpg" alt="">
                     </div><!-- /image -->
-                    <div class="image item-5">
+                    <div class="turisti-img image item-5">
                         <img src="img/image3.jpg" alt="">
                     </div><!-- /image -->
-                    <div class="image item-6">
+                    <div class="turisti-img image item-6">
                         <img src="img/image6.jpg" alt="">
                     </div><!-- /image -->
                 </div>
@@ -336,6 +336,12 @@
                     </div>
                 </div><!-- /team-member -->
             </div><!-- /team-members-container -->
+            <div class="popup-message">
+                <button>
+
+                </button>
+            </div>
+
         </section>
         <section  class="service-packages">
             <h2>ПАКЕТЫ УСЛУГ <sub>/</sub></h2>
@@ -387,7 +393,7 @@
             <img src="./img/Pin.png" alt="">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d223209.84416895517!2d-13.63964186881355!3d29.05681882045699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1682540576839!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </section>
         <section class="application">
-            <h2>ОСТАВИТЬ ЗАЯВКУ <sub>/</sub></h2>
+            <h2 id="contact-sect">ОСТАВИТЬ ЗАЯВКУ <sub>/</sub></h2>
             <div class="application-container">
                 <form class="fill">
                     <input type="text" placeholder="Имя">
@@ -395,7 +401,7 @@
                     <textarea class="fill-message" type="text" placeholder="Оставьте сообщение, и мы свяжемся с Вами в ближайшее время"></textarea>
                     <button type="submit" id="submit-btn">ОТПРАВИТЬ</button>
                 </form>
-                <div id="contact-sect" class="contacts">
+                <div  class="contacts">
                     <div class="question-contacts">
                         <span>Есть вопрос?</span>
                         <span>Вы можете связаться с нами:</span>

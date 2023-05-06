@@ -151,17 +151,20 @@ section{
 // ============ Section One ============ //
 .section-one{
     width: 100%;
-    max-height: 1080px;
+    max-height: 800px;
     height: 100vh;
+    padding-top: 16%;
     background-image: url(..//img/section-one-background.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-position: center top;
+    background-size: 100% 800px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 16%;
+    background-attachment: fixed;
+    
     h1{
         font-family: 'Raleway';
         font-style: normal;
@@ -173,6 +176,7 @@ section{
     }
     span{
         margin-bottom: 250px;
+        z-index: 2;
         @include heading-three()
     }
     .surfing-board{
@@ -804,9 +808,8 @@ footer{
 .modal-window{
     display: flex;
     flex-direction: column;
-    max-width: 300px;
-    gap: 10px;
-    padding: 50px;
+    gap: 30px;
+    padding: 50px 100px;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.475);
     border-radius: 15px;
@@ -814,8 +817,8 @@ footer{
     z-index: 4;
     
     .exit{
-        width: 20px;
-        height: 20px;
+        width: 50px;
+        height: 50px;
         background-color: white;
         border: 1px solid #C4C4C4;
         padding: 15px;
@@ -839,16 +842,16 @@ footer{
         }
         .x{
             display: block;
-            width: 15px;
-            height: 1px;
-            background-color: rgb(0, 0, 0);
+            width: 20px;
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.5);
             rotate: 45deg;
             &::after{
                 content: '';
                 display: block;
-                width: 15px;
-                height: 1px;
-                background-color: rgb(0, 0, 0);
+                width: 20px;
+                height: 2px;
+                background-color: rgb(0, 0, 0, 0.5);
                 rotate: 90deg;
             }
         }
@@ -858,29 +861,30 @@ footer{
         flex-direction: column;
         gap: 10px;
         input{
+            font-size: 30px;
+            font-weight: 300;
             border: 0;
             border-bottom: 1px solid #00B2A0;
-            height: 40px;
+            height: 70px;
             background-color: rgba(255, 255, 255, 0);
             &::placeholder{
-                color: #ffffff;
-                font-size: 18px;
-
+                color: #023a34;
+                font-size: 28px;
             }
-            @include text-configs()
         }
         button{
             background-color: white;
             border: 1px solid #C4C4C4;
             border-radius: 10px;
-            padding: 15px;
+            padding:15px 45px;
+            font-size: 30px;
+            font-weight: 300;
             &:active{
                 scale: 0.95;
                 background-color: #00B2A0;
                 color: white;
                 transition: 0.5s;
             }
-            @include text-configs()
         }
     }
 }
