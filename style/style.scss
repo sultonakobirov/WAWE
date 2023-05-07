@@ -114,8 +114,10 @@ body{
     }
     .header-links{
         display: flex;
-        gap: 40px;
+        gap: 50px;
         list-style: none;
+        position: relative;
+        left: 8%;
         a{
             position: relative;
             cursor: pointer;
@@ -139,6 +141,9 @@ body{
             }
             @include link-decorations()  
         }
+    }
+    .header-links-media{
+        scale: 0;
     }
     .hamburger-menu{
         display: none;
@@ -293,9 +298,11 @@ section{
     gap: 5%;
     padding-bottom: 0;
     padding-top: 0;
+    .section-four-img{
+        padding-left: 60px;
+    }
     img{
         width: 100%;
-        
     }
     .section-four-text{
         width: 26.2%;

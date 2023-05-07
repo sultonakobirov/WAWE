@@ -78,8 +78,10 @@ body::-webkit-scrollbar-thumb {
 }
 .header .header-links {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   list-style: none;
+  position: relative;
+  left: 8%;
 }
 .header .header-links a {
   position: relative;
@@ -105,6 +107,9 @@ body::-webkit-scrollbar-thumb {
 .header .header-links a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
+}
+.header .header-links-media {
+  scale: 0;
 }
 .header .hamburger-menu {
   display: none;
@@ -299,6 +304,9 @@ section {
   gap: 5%;
   padding-bottom: 0;
   padding-top: 0;
+}
+.section-four .section-four-img {
+  padding-left: 60px;
 }
 .section-four img {
   width: 100%;

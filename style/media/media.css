@@ -138,17 +138,6 @@
     top: 20px;
     right: 50px;
   }
-  .header .hamburger-menu .header-links-media {
-    position: absolute;
-    top: 450px;
-    left: -560px;
-    scale: 0;
-  }
-  .header .hamburger-menu .header-links-media a {
-    font-size: 64px;
-    font-weight: 900;
-    line-height: 100px;
-  }
   .header .hamburger-menu .logo {
     display: block;
     width: 120px;
@@ -196,12 +185,24 @@
     height: 5px;
     width: 5px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.231372549);
+    background-color: rgba(0, 0, 0, 0.4274509804);
     position: absolute;
     top: 57px;
     right: 25px;
     z-index: 0;
     translate: 50% -50%;
+  }
+  .header .header-links-media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% 0%;
+    scale: 0;
+  }
+  .header .header-links-media a {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 100px;
   }
   .section-two .section-two-paragraph-container p {
     font-size: 28px;

@@ -1,62 +1,42 @@
-let hamburgerMenu = document.getElementById('checkbox-menu')
-let menuBg = document.getElementById('nav-bg')
+let hamburgerMenu = document.querySelector('#checkbox-menu')
+let menuBg = document.querySelector('#nav-bg')
 let menuCont = document.querySelector('.header-links-media')
 let spanOne = document.querySelector('.one')
 let spanTwo = document.querySelector('.two')
 let spanThree = document.querySelector('.three')
-let threeSpan = document.getElementsByClassName('span-cont')
-let days = document.querySelector('.days')
-let daysCont = document.querySelector('.days-cont')
 let showMoreModal = document.querySelector('.show-more')
 let modalWindowCont = document.querySelector('.modal-cont')
 let modalWindow = document.querySelector('.modal-window')
 let closeModal = document.querySelector('.exit')
 let body = document.querySelector('body')
-let applicantForm = document.getElementById('submit-btn')
-let modalForm = document.getElementById('form-sub')
+let applicantForm = document.querySelector('#submit-btn')
+let modalForm = document.querySelector('#form-sub')
 let couchesNum = document.querySelector('.couches')
-let hoursNum = document.querySelector('.hours')
-let touristsNum = document.querySelector('.tourists') 
 let galleryImages = document.querySelector('.grid-one')
-
-showMoreModal.onclick = () =>{
-    modalWindowCont.style.display = 'flex'
-    body.style.overflow = 'hidden'
-    modalWindowCont.style.overflow = 'auto'
-    modalWindowCont.style.height = '100vh'
-    modalWindowCont.style.width = '100%'
+let indicators = document.querySelector('.indicators')
+let numbers = document.querySelectorAll('.number')
+let arrOfNum = [450, 2500, 10, 365]
+function cycle(content,num) {
+    for (let index = 0; index < num.length; index++) {
+        let element = num[index];
+        let innerContent= content[index];
+        for (let i = 0; i <= element; i = i + 1) {
+            setTimeout(function () {
+                let a = 0
+                innerContent.innerHTML = i
+            }, 2*i);
+        }
+    }
 }
-closeModal.onclick = () =>{
-    body.style.overflow = 'auto'
-    modalWindowCont.style.overflow = 'hidden'
-    modalWindowCont.style.height = '0'
-    modalWindowCont.style.width = '0'
-}
-
-
-
-function handleFormSubmit(event) {
-    event.preventDefault()
-}
-modalForm.onclick = handleFormSubmit
-applicantForm.onclick = handleFormSubmit
-
-let swiper = new Swiper(".mySwiper", {
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + ("") + "</span>";
-        },
-    },
-    speed: 500,
-    spaceBetween: 10,
-    loop: true,
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-    },
-});
+let visibility = function(entries) {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+    cycle(numbers, arrOfNum)
+    }
+    });
+    };
+const observer = new IntersectionObserver(visibility);
+observer.observe(indicators);
 
 hamburgerMenu.onclick = () =>{
     if(hamburgerMenu.checked == true){
@@ -89,33 +69,38 @@ hamburgerMenu.onclick = () =>{
     }, 150);
     }
 }
-
-let main = document.documentElement
-let clientWidth = main.clientWidth
-let clientHeight = main.clientHeight
-
-function cycle(content, num) {
-    let a = 0
-    for (let i = 0; i <= num; i = i + 1) {
-        setTimeout(function () {
-            content.innerHTML = i
-            console.log(i);
-        }, 2*i);
-    }
+let swiper = new Swiper(".mySwiper", {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + ("") + "</span>";
+        },
+    },
+    speed: 500,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+});
+showMoreModal.onclick = () =>{
+    modalWindowCont.style.display = 'flex'
+    body.style.overflow = 'hidden'
+    modalWindowCont.style.overflow = 'auto'
+    modalWindowCont.style.height = '100vh'
+    modalWindowCont.style.width = '100%'
+}
+closeModal.onclick = () =>{
+    body.style.overflow = 'auto'
+    modalWindowCont.style.overflow = 'hidden'
+    modalWindowCont.style.height = '0'
+    modalWindowCont.style.width = '0'
 }
 
-let coordinationIndicators = document.querySelector('.indicators')
-console.log(coordinationIndicators.getBoundingClientRect());
-
-if (coordinationIndicators.top >= clientHeight) {
-    cycle(touristsNum, 450)
-    cycle(hoursNum, 2500)
-    cycle(couchesNum, 10)
-    cycle(days, 365)
+function handleFormSubmit(event) {
+    event.preventDefault()
 }
-
-let turisti = document.querySelector('.turisti')
-turisti.onclick = handleFormSubmit
-turisti.addEventListener('click',  () =>{
-    
-})
+modalForm.onclick = handleFormSubmit
+applicantForm.onclick = handleFormSubmit

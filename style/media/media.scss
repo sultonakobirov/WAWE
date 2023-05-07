@@ -170,17 +170,6 @@
             position: absolute;
             top: 20px;
             right: 50px;
-            .header-links-media{
-                position: absolute;
-                top: 450px;
-                left: -560px;
-                scale: 0;
-                a{
-                    font-size: 64px;
-                    font-weight: 900;
-                    line-height: 100px;
-                }
-            }
             .logo{
                 display: block;
                 width: 120px;
@@ -191,7 +180,6 @@
                 }
             }
             #toggle-btn{
-                
                 label{
                     display: flex;
                     flex-direction: column;
@@ -232,12 +220,24 @@
                 height: 5px;
                 width: 5px;
                 border-radius: 50%;
-                background-color: #0000003b;
+                background-color: #0000006d;
                 position: absolute;
                 top: 57px;
                 right: 25px;
                 z-index: 0;
                 translate: 50% -50%;
+            }
+        }
+        .header-links-media{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% 0%;
+            scale: 0;
+            a{
+                font-size: 64px;
+                font-weight: 900;
+                line-height: 100px;
             }
         }
     }   
