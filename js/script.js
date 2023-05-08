@@ -16,23 +16,32 @@ let galleryImages = document.querySelector('.grid-one')
 let indicators = document.querySelector('.indicators')
 let numbers = document.querySelectorAll('.number')
 let popup = document.querySelector('.popup-message')
-let teamSection = document.querySelector('.team-member')
 let formCont = document.querySelector('.modal-window-form')
-let teamMember = document.querySelectorAll('.team-member ')
 let arrOfNum = [450, 2500, 10, 365] 
-showMoreModal.onclick = () =>{
-    modalWindowCont.style.display = 'flex'
-    body.style.overflow = 'hidden'
-    modalWindowCont.style.overflow = 'auto'
-    modalWindowCont.style.height = '100vh'
-    modalWindowCont.style.width = '100%'
+let teamSection = document.querySelector('.team-members-container')
+let tarrifChoose = document.querySelectorAll('.tariff-item')
+let showCloseModal = (elem)=>{
+    elem.onclick = () =>{
+        modalWindowCont.style.display = 'flex'
+        body.style.overflow = 'hidden'
+        modalWindowCont.style.overflow = 'auto'
+        modalWindowCont.style.height = '100vh'
+        modalWindowCont.style.width = '100%'
+    }
+    closeModal.onclick = () =>{
+        body.style.overflow = 'auto'
+        modalWindowCont.style.overflow = 'hidden'
+        modalWindowCont.style.height = '0'
+        modalWindowCont.style.width = '0'
+    }
 }
-closeModal.onclick = () =>{
-    body.style.overflow = 'auto'
-    modalWindowCont.style.overflow = 'hidden'
-    modalWindowCont.style.height = '0'
-    modalWindowCont.style.width = '0'
+
+for (let index = 0; index < tarrifChoose.length; index++) {
+    const element = tarrifChoose[index];
+    showCloseModal(element)
+    
 }
+
 function cycle(content,num) {
     for (let index = 0; index < num.length; index++) {
         let element = num[index];
@@ -45,6 +54,7 @@ function cycle(content,num) {
         }
     }
 }
+
 function runWhenVisible(element, callback) {
     let handler = function() {
     let rect = element.getBoundingClientRect();
@@ -59,13 +69,7 @@ function runWhenVisible(element, callback) {
 runWhenVisible(indicators, function() {
     cycle(numbers, arrOfNum)
 });
-popup.children[0].addEventListener('click', ()=>{
-    modalWindowCont.style.display = 'flex'
-    body.style.overflow = 'hidden'
-    modalWindowCont.style.overflow = 'auto'
-    modalWindowCont.style.height = '100vh'
-    modalWindowCont.style.width = '100%'
-})
+showCloseModal(popup.children[0])
 let visibility = function(entries) {
     entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -79,6 +83,7 @@ let visibility = function(entries) {
     };
 const observer = new IntersectionObserver(visibility);
 observer.observe(teamSection);
+
 hamburgerMenu.onclick = () =>{
     if(hamburgerMenu.checked == true){
     menuBg.style.scale = '1660'
@@ -110,6 +115,7 @@ hamburgerMenu.onclick = () =>{
     }, 150);
     }
 }
+
 let swiper = new Swiper(".mySwiper", {
     pagination: {
         el: ".swiper-pagination",
@@ -126,8 +132,60 @@ let swiper = new Swiper(".mySwiper", {
         disableOnInteraction: false,
     },
 });
+
 function handleFormSubmit(event) {
     event.preventDefault()
 }
 modalForm.onclick = handleFormSubmit
 applicantForm.onclick = handleFormSubmit
+
+let dragSrcEl = null;
+function handleDragStart(e) {
+dragSrcEl = this;
+e.dataTransfer.effectAllowed = 'move';
+e.dataTransfer.setData('text/html', this.innerHTML);
+}
+function handleDragOver(e) {
+if (e.preventDefault) {
+e.preventDefault();
+}
+e.dataTransfer.dropEffect = 'move';
+return false;
+}
+function handleDragEnter(e) {
+this.classList.add('over');
+}
+function handleDragLeave(e) {
+this.classList.remove('over');
+}
+function handleDrop(e) {
+if (e.stopPropagation) {
+e.stopPropagation();
+}
+if (dragSrcEl != this) {
+dragSrcEl.innerHTML = this.innerHTML;
+this.innerHTML = e.dataTransfer.getData('text/html');
+}
+return false;
+}
+function handleDragEnd(e) {
+this.style.opacity = '1';
+let imgs = document.querySelectorAll('.team-member');
+for (let i = 0; i < imgs.length; i++) {
+imgs[i].classList.remove('over');
+}
+}
+function init() {
+    let imgs = document.querySelectorAll('.team-member-img');
+    for (let i = 0; i < imgs.length; i++) {
+    imgs[i].setAttribute('draggable', true);
+    imgs[i].addEventListener('dragstart', handleDragStart, false);
+    imgs[i].addEventListener('dragenter', handleDragEnter, false);
+    imgs[i].addEventListener('dragover', handleDragOver, false);
+    imgs[i].addEventListener('dragleave', handleDragLeave, false);
+    imgs[i].addEventListener('drop', handleDrop, false);
+    imgs[i].addEventListener('dragend', handleDragEnd, false);
+    }
+    }
+init()
+

@@ -606,6 +606,8 @@ section{
             flex-direction: column;
             justify-content: center;
             text-align: center;
+            min-height: 200px;
+            min-width: 100px;
         }
         span{
             color: #242121;
@@ -679,6 +681,10 @@ section{
         background-color: white;
         display: flex;
         flex-direction: column;
+        &:active{
+            scale: 1.1;
+            transition: 0.3s;
+        }
         h3{
             font-weight: 400;
             font-size: 36px;

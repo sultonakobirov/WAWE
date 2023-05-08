@@ -670,6 +670,8 @@ section {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  min-height: 200px;
+  min-width: 100px;
 }
 .team .team-members-container span {
   color: #242121;
@@ -761,6 +763,10 @@ section {
   background-color: white;
   display: flex;
   flex-direction: column;
+}
+.tariff-container .tariff-item:active {
+  scale: 1.1;
+  transition: 0.3s;
 }
 .tariff-container .tariff-item h3 {
   font-weight: 400;
