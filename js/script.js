@@ -22,14 +22,15 @@ let teamSection = document.querySelector('.team-members-container')
 let tarrifChoose = document.querySelectorAll('.tariff-item')
 
 function filterPhotos() {
-    const selectedFilter = document.querySelector('input[name="filter"]:checked').value;
-    const photos = document.querySelectorAll('.image');
+    let selectedFilter = document.querySelector('input[name="filter"]:checked').value;
+    let photos = document.querySelectorAll('.image');
     photos.forEach(photo => {
     if (selectedFilter === 'all' || photo.classList.contains(selectedFilter)) {
     photo.style.scale = '1';
     photo.style.transition = '0.3s'
     } else {
     photo.style.scale = '0';
+    photo.style.transition = '0.3s'
     }
     })
     }
