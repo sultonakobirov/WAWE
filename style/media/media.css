@@ -34,8 +34,9 @@
     line-height: 36px;
   }
   .section-gallery .gallery-images {
-    width: 100%;
+    width: 90%;
     height: 100%;
+    right: 0;
   }
   .section-gallery .gallery-images .grid-one {
     display: none;

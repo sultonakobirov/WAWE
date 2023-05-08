@@ -51,10 +51,11 @@
     <div class="modal-cont">
         <div class="modal-window">
             <button class="exit"><span class="x"></span></button>
-            <form action="">
-                <input type="email" placeholder="email">
-                <input type="password" placeholder="password">
-                <button id="form-sub" type="submit" >Sign in</button>
+            <p>Наши операторы свяжутся с вами</p>
+            <form class="modal-window-form" action="">
+                <input type="tel" placeholder="Телефон">
+                <textarea placeholder="Сообщение" class="message" name="" id="" cols="25" rows="4"></textarea>
+                <button id="form-sub" type="submit" >ОТПРАВИТЬ</button>
             </form>
         </div>
     </div>
@@ -188,16 +189,26 @@
         
         <section class="section-gallery">
             <h2>ГАЛЕРЕЯ <sub>/</sub></h2>
-            
-            <div class="flex-item-container">
-                <div class="gallery-links">
-                    <a href="#">ВСЕ</a>
-                    <a class="turisti" href="#">ТУРИСТЫ</a>
-                    <a href="#">ПРИРОДА</a>
-                    <a href="#">ПРОФИ</a>
-                </div>
                 <!-- gallery-links -->
             <div class="gallery-images">
+                <div class="gallery-links">
+                    <input type="checkbox" id="all">
+                    <label for="all">
+                        <span>ВСЕ</span>
+                    </label>
+                    <input type="checkbox" id="tourists" >
+                    <label for="tourists">
+                        <span>ТУРИСТЫ</span>
+                    </label>
+                    <input type="checkbox" id="nature">
+                    <label for="nature">
+                        <span>ПРИРОДА</span>
+                    </label>
+                    <input type="checkbox" id="profi" >
+                    <label for="profi">
+                        <span>ПРОФИ</span>
+                    </label>
+                </div>
                 <div class="grid-one">
                     <div class="image item-1">
                         <img src="img/image1.jpg" alt="">
@@ -208,9 +219,6 @@
                     <div class="image item-3">
                         <img src="img/image5.jpg" alt="">
                     </div><!-- /image -->
-                </div>
-                <!-- grid-one -->
-                <div class="grid-two">
                     <div class="profi-img image item-4">
                         <img src="img/image2.jpg" alt="">
                     </div><!-- /image -->
@@ -236,7 +244,6 @@
                 <!-- /grid-media -->
             </div>
             <!-- /gallery-images -->
-            </div>
             <button class="show-more" >ПОКАЗАТЬ ЕЩЕ</button> 
         </section>
         <section class="section-quote">
@@ -246,10 +253,10 @@
         <section class="video">
             <video controls src="video/videoplayback_Trim.mp4" poster="./img/prewiev.jpg"></video>
             <div class="indicators">
-                <p class="tourists-cont"><span class="number"></span> <br> туристов</p>
-                <p class="hours-cont"><span class="number"></span> <br> часов катания</p>
-                <p class="couches-cont"><span class="number"></span> <br> проф. тренеров</p>
-                <p class="days-cont"><span class="number"></span> <br> дней в году</p>
+                <p class="tourists-cont"><span class="number">0</span> <br> туристов</p>
+                <p class="hours-cont"><span class="number">0</span> <br> часов катания</p>
+                <p class="couches-cont"><span class="number">0</span> <br> проф. тренеров</p>
+                <p class="days-cont"><span class="number">0</span> <br> дней в году</p>
             </div>
         </section>
         <section id="blog" class="blog">
@@ -309,7 +316,7 @@
             <h2 id="team-sect">НАША КОМАНДА <sub>/</sub></h2>
             <div class="team-members-container">
                 <div class="team-member">
-                    <img src="img/mike-photo.jpg" alt="">
+                    <img draggable="true" src="img/mike-photo.jpg" alt="">
                     <div class="name">
                         <span class="member-name">Mike</span>
                         <br>
@@ -317,7 +324,7 @@
                     </div>
                 </div><!-- /team-member -->
                 <div class="team-member">
-                    <img src="img/mary-photo.jpg" alt="">
+                    <img draggable="true" src="img/mary-photo.jpg" alt="">
                     <div class="name">
                         <span class="member-name">Mary</span>
                         <br>
@@ -325,20 +332,18 @@
                     </div>
                 </div><!-- /team-member -->
                 <div class="team-member">
-                    <img src="img/olga-photo.jpg" alt="">
+                    <img draggable="true" src="img/olga-photo.jpg" alt="">
                     <div class="name">
                         <span class="member-name">Ольга</span>
                         <br>
                         <span>инстуктор</span>
                     </div>
                 </div><!-- /team-member -->
+                <div class="popup-message">
+                    <button><img src="./img/vecteezy_speech-bubble-chat-icon-sign-design_10160194_833.png" alt=""></button>
+                    <p>Сообщение Ольге</p>
+                </div>
             </div><!-- /team-members-container -->
-            <div class="popup-message">
-                <button>
-
-                </button>
-            </div>
-
         </section>
         <section  class="service-packages">
             <h2>ПАКЕТЫ УСЛУГ <sub>/</sub></h2>

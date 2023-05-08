@@ -26,6 +26,7 @@
             }
         } 
     }
+    
     .team{
         .team-members-container{
             gap: 0;
@@ -47,8 +48,9 @@
             }
         }
         .gallery-images{
-            width: 100%;
+            width: 90%;
             height: 100%;
+            right: 0;
             .grid-one{
                 display: none;
             }
@@ -59,8 +61,9 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-auto-rows: auto;
-                gap: 35px 35px  ;
+                gap: 35px 35px;
                 width: 100%;
+
                 .image{
                     width: 100%;
                     img{

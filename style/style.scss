@@ -331,9 +331,9 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    justify-content: center;
     h2{
-        margin-bottom: 10%;
+        margin-bottom: 11%;
         align-self: center;
         sub{
             @include sub-configs()
@@ -341,11 +341,16 @@ section{
         @include heading-two-configs()
     }
     .gallery-links{
-        margin-bottom: 2.5%;
         align-self:flex-start;
         display: flex;
-        gap: 2%;
-        a{
+        gap:20px;
+        position: absolute;
+        top: -40px;
+        left: 0;
+        input{
+            display: none;
+        }
+        span{
             color: #242121;
             font-weight: 400;
             font-size: 24px;
@@ -354,13 +359,22 @@ section{
                 color: #00B2A0;
                 transition: 0.5s;
             }
+            .span-checked{
+                color: #00B2A0;
+            }
         }
+    }
+    .flex-item-container{
+        width: 100%;
     }
     .gallery-images{
         display: flex;
         justify-content: center;
         gap: 6.5%;
-        height: 595px;
+        height: 605px;
+        position: relative;
+        right: 55px;
+
         .image{
             position: relative;
         }
@@ -379,11 +393,10 @@ section{
 
         .grid-one{
             display: grid;
-            grid-template-columns: 250px  290px;
+            grid-template-columns: 250px  290px 290px  254px;
             grid-auto-rows: auto;
             row-gap: 5.5%;
-            column-gap: 6.5%;
-            width: 100%;
+            column-gap: 3.5%;
             div{
                 img{
                     width: 100%;
@@ -393,31 +406,28 @@ section{
             .item-1{
                 grid-column: 1 /3;
             }
-            .item-2::before{
-                width: 100%;
+            .item-2{
+                grid-row: 2/3;
+                grid-column: 1 /2;
+                &::before{
+                    width: 100%;
+                }
             }
-        }
-        .grid-two{
-            display: grid;
-            grid-template-columns: 290px  254px;
-            grid-auto-rows: auto;
-            row-gap: 5.5%;
-            column-gap: 6.5%;
-            width: 100%;
-            .item-6{
-                grid-column: 1 / 3;
+            .item-3{
+                grid-row: 2/3;
+                grid-column: 2 /3;
+            }
+            .item-4{
+                grid-column: 3/4;
+                grid-row: 1/2;
             }
             .item-5{
-                display: flex;
-                justify-content: flex-end;
-                width: 100%;
-                height: 100%;
+                grid-column: 4/5;
+                grid-row: 1/2;
             }
-            div{
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
+            .item-6{
+                grid-column: 3/5;
+                grid-row: 2/3;
             }
         }
         .grid-media{
@@ -574,7 +584,6 @@ section{
 }
 // ============ Section team ============ //
 .team{
-    
     width: 100%;
     height: fit-content;
     h2{
@@ -607,6 +616,40 @@ section{
             font-size: 18px;
             line-height: 18px;
         }
+    }
+    .popup-message{
+        position: fixed;
+        z-index: 100;
+        bottom: 50px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        scale: 0;
+        button{
+            height: 80px;
+            width: 80px;
+            background-color: #ffffff00;
+            border: 0;
+            animation: big-small 1s 5;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        p{
+            @include text-configs()
+        }
+    }
+}
+@keyframes big-small {
+    0% {scale: 1;
+    }
+    50% {scale: 0.7;
+    }
+    100% {
+        scale: 1; 
     }
 }
 // ============ Section Sevrice-packages ============ //
@@ -863,6 +906,11 @@ footer{
             }
         }
     }
+    p{
+        font-size: 31px;
+        font-weight: 300;
+        color: #0D302C;
+    }
     form{
         display: flex;
         flex-direction: column;
@@ -875,6 +923,7 @@ footer{
             height: 70px;
             background-color: rgba(255, 255, 255, 0);
             &::placeholder{
+                position: absolute;
                 color: #023a34;
                 font-size: 28px;
             }
@@ -891,6 +940,20 @@ footer{
                 background-color: #00B2A0;
                 color: white;
                 transition: 0.5s;
+            }
+        }
+        textarea{
+            font-size: 30px;
+            font-weight: 300;
+            border: 0;
+            background-color: #ffffff00;
+            border: 1px solid #00B2A0;
+            resize: none;
+            &::placeholder{
+                position: absolute;
+                color: #023a34;
+                font-size: 28px;
+
             }
         }
     }

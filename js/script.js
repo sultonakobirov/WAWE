@@ -15,7 +15,24 @@ let couchesNum = document.querySelector('.couches')
 let galleryImages = document.querySelector('.grid-one')
 let indicators = document.querySelector('.indicators')
 let numbers = document.querySelectorAll('.number')
-let arrOfNum = [450, 2500, 10, 365]
+let popup = document.querySelector('.popup-message')
+let teamSection = document.querySelector('.team-member')
+let formCont = document.querySelector('.modal-window-form')
+let teamMember = document.querySelectorAll('.team-member ')
+let arrOfNum = [450, 2500, 10, 365] 
+showMoreModal.onclick = () =>{
+    modalWindowCont.style.display = 'flex'
+    body.style.overflow = 'hidden'
+    modalWindowCont.style.overflow = 'auto'
+    modalWindowCont.style.height = '100vh'
+    modalWindowCont.style.width = '100%'
+}
+closeModal.onclick = () =>{
+    body.style.overflow = 'auto'
+    modalWindowCont.style.overflow = 'hidden'
+    modalWindowCont.style.height = '0'
+    modalWindowCont.style.width = '0'
+}
 function cycle(content,num) {
     for (let index = 0; index < num.length; index++) {
         let element = num[index];
@@ -28,16 +45,40 @@ function cycle(content,num) {
         }
     }
 }
+function runWhenVisible(element, callback) {
+    let handler = function() {
+    let rect = element.getBoundingClientRect();
+    let viewportHeight = window.innerHeight;
+    if (rect.bottom >= 0 && rect.top+50 <= viewportHeight) {
+    callback();
+    window.removeEventListener('scroll', handler);
+    }
+    };
+    window.addEventListener('scroll', handler);
+}
+runWhenVisible(indicators, function() {
+    cycle(numbers, arrOfNum)
+});
+popup.children[0].addEventListener('click', ()=>{
+    modalWindowCont.style.display = 'flex'
+    body.style.overflow = 'hidden'
+    modalWindowCont.style.overflow = 'auto'
+    modalWindowCont.style.height = '100vh'
+    modalWindowCont.style.width = '100%'
+})
 let visibility = function(entries) {
     entries.forEach(entry => {
     if (entry.isIntersecting) {
-    cycle(numbers, arrOfNum)
+        popup.style.scale = '1'
+        popup.style.transition = '200ms'
+    } else{
+        popup.style.scale = '0'
+
     }
     });
     };
 const observer = new IntersectionObserver(visibility);
-observer.observe(indicators);
-
+observer.observe(teamSection);
 hamburgerMenu.onclick = () =>{
     if(hamburgerMenu.checked == true){
     menuBg.style.scale = '1660'
@@ -85,20 +126,6 @@ let swiper = new Swiper(".mySwiper", {
         disableOnInteraction: false,
     },
 });
-showMoreModal.onclick = () =>{
-    modalWindowCont.style.display = 'flex'
-    body.style.overflow = 'hidden'
-    modalWindowCont.style.overflow = 'auto'
-    modalWindowCont.style.height = '100vh'
-    modalWindowCont.style.width = '100%'
-}
-closeModal.onclick = () =>{
-    body.style.overflow = 'auto'
-    modalWindowCont.style.overflow = 'hidden'
-    modalWindowCont.style.height = '0'
-    modalWindowCont.style.width = '0'
-}
-
 function handleFormSubmit(event) {
     event.preventDefault()
 }
