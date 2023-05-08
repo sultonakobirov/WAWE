@@ -20,6 +20,20 @@ let formCont = document.querySelector('.modal-window-form')
 let arrOfNum = [450, 2500, 10, 365] 
 let teamSection = document.querySelector('.team-members-container')
 let tarrifChoose = document.querySelectorAll('.tariff-item')
+
+function filterPhotos() {
+    const selectedFilter = document.querySelector('input[name="filter"]:checked').value;
+    const photos = document.querySelectorAll('.image');
+    photos.forEach(photo => {
+    if (selectedFilter === 'all' || photo.classList.contains(selectedFilter)) {
+    photo.style.scale = '1';
+    photo.style.transition = '0.3s'
+    } else {
+    photo.style.scale = '0';
+    }
+    })
+    }
+
 let showCloseModal = (elem)=>{
     elem.onclick = () =>{
         modalWindowCont.style.display = 'flex'
@@ -189,3 +203,9 @@ function init() {
     }
 init()
 
+
+const filterRadios = document.querySelectorAll('input[name="filter"]');
+filterRadios.forEach(radio => {
+radio.addEventListener('change', filterPhotos);
+})
+    

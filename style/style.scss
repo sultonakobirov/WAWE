@@ -359,10 +359,10 @@ section{
                 color: #00B2A0;
                 transition: 0.5s;
             }
-            .span-checked{
-                color: #00B2A0;
-            }
         }
+
+           
+    
     }
     .flex-item-container{
         width: 100%;
@@ -374,7 +374,6 @@ section{
         height: 605px;
         position: relative;
         right: 55px;
-
         .image{
             position: relative;
         }
@@ -385,11 +384,7 @@ section{
             z-index: 99;
             position: absolute;
             background-color: #01353e66;
-        }
-        .image:hover{
-            scale: 1.05;
-            transition: 0.7s;
-        }   
+        } 
 
         .grid-one{
             display: grid;

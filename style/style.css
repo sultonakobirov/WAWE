@@ -397,9 +397,6 @@ section {
   color: #00B2A0;
   transition: 0.5s;
 }
-.section-gallery .gallery-links span .span-checked {
-  color: #00B2A0;
-}
 .section-gallery .flex-item-container {
   width: 100%;
 }
@@ -421,10 +418,6 @@ section {
   z-index: 99;
   position: absolute;
   background-color: rgba(1, 53, 62, 0.4);
-}
-.section-gallery .gallery-images .image:hover {
-  scale: 1.05;
-  transition: 0.7s;
 }
 .section-gallery .gallery-images .grid-one {
   display: grid;
