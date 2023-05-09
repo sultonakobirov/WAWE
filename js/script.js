@@ -52,7 +52,7 @@ let showCloseModal = (elem)=>{
 }
 
 for (let index = 0; index < tarrifChoose.length; index++) {
-    const element = tarrifChoose[index];
+    let element = tarrifChoose[index];
     showCloseModal(element)
     
 }
@@ -96,7 +96,7 @@ let visibility = function(entries) {
     }
     });
     };
-const observer = new IntersectionObserver(visibility);
+let observer = new IntersectionObserver(visibility);
 observer.observe(teamSection);
 
 hamburgerMenu.onclick = () =>{
@@ -205,7 +205,7 @@ function init() {
 init()
 
 
-const filterRadios = document.querySelectorAll('input[name="filter"]');
+let filterRadios = document.querySelectorAll('input[name="filter"]');
 filterRadios.forEach(radio => {
 radio.addEventListener('change', filterPhotos);
 })
